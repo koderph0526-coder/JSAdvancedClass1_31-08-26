@@ -83,6 +83,7 @@ const priceLowToHigh = [...products].sort((a, b) => a.price - b.price);
 console.log(priceLowToHigh); //This way it sort everything from the array that contains "price" from low to high
 /// -> It ensured that the array keeps in tact, meaning that we don't alter the original but use it as a base to calculate and it prints a copy with the result of the given parameters
 const priceHightToLow = [...products].sort((a, b) => b.price - a.price); //This sort the array of prices from hight to low?
+console.log(priceHightToLow);
 
 // sum -  used such as below; calculates the total value, NOTE: it needs to be the first parameter that's given in the function
 const totalPrice = products.reduce((sum, item) => {
