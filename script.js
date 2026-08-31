@@ -41,12 +41,42 @@ const arrowFunction = () => {}; // The arrow function is now made as a variable
 // Please note that this one still accepts a parameter and/or argument in the ()
 
 // high order Methods, one of them being .map!
-const arrayUnmapped [2, 5, 4, 64, 13]
+const arrayUnmapped = [2, 5, 4, 64, 13];
 // a high order method is a way of coding that allows us to use/run functions as the paramaters!
-arrayUnmapped.map((a) => {}) //This runs the first number in the array, renaming it to be "a"
-const arraytwo = arrayUnmapped.map((a) => a + 1) //Here we are storing the function in a new array, while renaming it
+arrayUnmapped.map((a) => {}); //This runs the first number in the array, renaming it to be "a"
+const arraytwo = arrayUnmapped.map((a) => a + 1); //Here we are storing the function in a new array, while renaming it
 //"The great thing about .map is that it returns a new array, it reads the code and then runs it as a new array."
-arrayUnmapped.forEach((a) => {console.log(a)})
+arrayUnmapped.forEach((a) => {
+  console.log(a * 2);
+});
 //It's almost like writing a for loop, while running an index through it. Sad thing about forEach is that it doesn't run/save it as a new array
 
+//SideNote: Will be using .map ALOT when working in react, so it's benefit to learn and understand this method
 
+// --- A lot of the code we are being thaught today is code we are actually already familiar with, but written in a simnpler, more impoved manner that is often shorter and more precise.
+//The forEach behind the scenes:
+for (let i = 0; i < arrayUnmapped.length; i++) {
+  console.log(arrayUnmapped[i] * 2);
+  // NS! This code runs excactly the same as the forEach on line 47!
+}
+
+//
+//This .filter() Method:
+
+const products = [
+  { name: "Laptops", price: 1200, inStock: true },
+  { name: "Mus", price: 350, inStock: true },
+  { name: "Tastatur", price: 850, inStock: false },
+  { name: "Skjerm", price: 3500, inStock: true },
+];
+
+//This filter and checks which items that have been stated as true = in stock
+const inStock = products.filter((item) => item.inStock);
+console.log(inStock);
+
+//This filter checks and "prints" only the items which price is lower than 1000.
+const cheapPrices = products.filter((item) => item.price < 1000);
+console.log(cheapPrices);
+
+// .sort
+const priceLowToHigh = 
