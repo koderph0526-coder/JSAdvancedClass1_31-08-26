@@ -64,10 +64,10 @@ for (let i = 0; i < arrayUnmapped.length; i++) {
 //This .filter() Method:
 
 const products = [
-  { name: "Laptops", price: 1200, inStock: true },
-  { name: "Mus", price: 350, inStock: true },
-  { name: "Tastatur", price: 850, inStock: false },
-  { name: "Skjerm", price: 3500, inStock: true },
+  { name: "Laptop", price: 1200, inStock: true },
+  { name: "Mouse", price: 350, inStock: true },
+  { name: "Keyboard", price: 850, inStock: false },
+  { name: "Screen", price: 3500, inStock: true },
 ];
 
 //This filter and checks which items that have been stated as true = in stock
@@ -78,5 +78,20 @@ console.log(inStock);
 const cheapPrices = products.filter((item) => item.price < 1000);
 console.log(cheapPrices);
 
-// .sort
-const priceLowToHigh = 
+// .sort -> NS! This method needs destructuring to work
+const priceLowToHigh = [...products].sort((a, b) => a.price - b.price);
+console.log(priceLowToHigh); //This way it sort everything from the array that contains "price" from low to high
+/// -> It ensured that the array keeps in tact, meaning that we don't alter the original but use it as a base to calculate and it prints a copy with the result of the given parameters
+const priceHightToLow = [...products].sort((a, b) => b.price - a.price); //This sort the array of prices from hight to low?
+
+// sum -  used such as below; calculates the total value, NOTE: it needs to be the first parameter that's given in the function
+const totalPrice = products.reduce((sum, item) => {
+  return sum + item.price;
+}, 0); // The 0 is sent straigh back into reduce, as to tell it what it needs to start at? - Or to give it the "You are a number and you start at 0, btw" message. It is seens as an initializer value.
+//This logs the totalt value from all of the items to console
+console.log(totalPrice);
+
+//Sidenotes/recap of old lessons:
+const tall2 = 2; // daclered with a initialized value
+tall2 = 1; // reassigning the value, ?note? can also only be done on a let? It for now gives an error in the console.
+let tall3; //Just declaring a variable, this one is empty, NOTE: only let can be stated as a simple declaration without an assigned value
